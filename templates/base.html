@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'head.html' %}
+
+<body>
+
+<!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+     <div id="main-wrapper">
+<!-- Begin page -->
+        {% include 'header.html' %}
+        {% include 'chatbox.html' %}
+        {% include 'sidebar.html' %}
+        {% include 'header2.html' %}
+        {% include 'sidebar2.html' %}
+        {% block content %}{% endblock content %}
+        </div>
+
+
+        {% include 'scripts.html' %}
+
+
+
+        
+</body>
+</html>

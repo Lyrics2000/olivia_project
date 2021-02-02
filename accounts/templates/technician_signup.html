@@ -1,0 +1,58 @@
+{% extends 'loginbase.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-login100" style="background-image: url({% static 'images/bg-01.jpg' %});">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+			<form class="login100-form validate-form"method="POST">
+                                        {% csrf_token %}
+				<span class="login100-form-title p-b-37">
+					Sign Up
+				</span>
+
+				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter FirstName ">
+					 {{form.firstName}}
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter LastName ">
+					 {{form.lastName}}
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter Email">
+					 {{form.email}}
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input m-b-25" data-validate = "Enter password">
+					{{form.password}}
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input m-b-25" data-validate = "Enter ConfirmPassword">
+					{{form.confirmpassword}}
+					<span class="focus-input100"></span>
+				</div>
+				<div class="container-login100-form-btn">
+					<button class="login100-form-btn">
+						Sign Up
+					</button>
+				</div>
+
+				
+
+				
+
+				<div class="text-center">
+					<a href="{% url "accounts:client_signin" %}" class="txt2 hov1">
+						Sign In
+					</a>
+				</div>
+			</form>
+
+			
+		</div>
+	</div>
+{% endblock content %}
