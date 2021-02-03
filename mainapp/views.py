@@ -11,6 +11,8 @@ def index(request):
     farm_product_consumed = Cow.objects.aggregate(Sum('product_consumed'))
     number_of_eggs_laid = Chicken.objects.aggregate(Sum("egg_laid")) 
     chicken_total_firm_product_consumed = Chicken.objects.aggregate(Sum("product_consumed")) 
+    cows = Cow.objects.all()
+    chicken = Chicken.objects.all()
     print(number_of_eggs_laid)
 
 
@@ -18,7 +20,13 @@ def index(request):
         "total_cows":total_cows,
         "egg_laid_sum" : number_of_eggs_laid,
         'farm_product_total_cows':farm_product_consumed,
-        'chicken_product_consumed':chicken_total_firm_product_consumed
+        'chicken_product_consumed':chicken_total_firm_product_consumed,
+        'cows':cows,
+        'chicken':chicken
+
     }
 
     return render(request,'index.html',context)
+
+def enter_data(request):
+    return render(request,'form.html',{})

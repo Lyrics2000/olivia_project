@@ -23,7 +23,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
-    'mainapp'
+    'mainapp',
+    'reset_migrations',
 ]
 
 MIDDLEWARE = [
